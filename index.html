@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+
+ <!-- * Battleships HTML Index file
+ * @copyright: (C) 2018 in cooperation with Vancouver Film School. All Right Reserved.
+ * @author: Harish Kumar -> {@ link harishsghp@live.com}
+ * @ version: 1.0.0 -->
+
+
+<html>
+    <head>
+        <title>Battleships</title>
+        <link rel="stylesheet" href="css/Battleship.css">
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"> </script>
+    </head>
+    <body>
+<!-- ===================================== Structure of Main Menu ============================================ -->
+        
+        <section id="MainMenu" class = "ShowScreen Layer1">
+
+            <section id="MainMenuScreen" class="ButtonContainer ShowScreen">
+                <button id="PlayButton" class="MainMenuButton UI_Sounds">
+                    PLAY
+                </button>
+                <button id="HelpButton" class ="MainMenuButton UI_Sounds">
+                    HELP
+                </button>
+                <button id="CreditsButton" class ="MainMenuButton UI_Sounds">
+                    CREDITS
+                </button>
+            </section>
+
+            <section id="PlayerSelectScreen" class="ButtonContainer  Hide">
+                <button class="BackButton UI_Sounds">
+                    BACK
+                </button>
+                <button id="PVE" class="MainMenuButton UI_Sounds">
+                    CLASSIC
+                </button>
+                <button id="PVP" class ="MainMenuButton UI_Sounds">
+                    2PLAYER
+                </button>
+            </section>
+
+            <section id="PlayerNameScreen" class="ButtonContainer Hide">
+                <form id="PlayerNameForm">
+                </form>
+                <div id="SubmitButton" class="Button UI_Sounds">SUBMIT</div>
+            </section>
+
+            <section id="HelpScreen" class="ContentScreen Hide">
+                <button class="BackButton UI_Sounds">
+                    BACK
+                </button>
+                <div id="HelpContent" class = "Content">
+                    RULES FOR THE CLASSIC MODE:</br>
+                    Players are tasked to destroy all the ships hidden before the Missiles run out.
+                    </br></br>
+                    RULES FOR THE 2PLAYER:</br>
+                    This is a turn-based mode where the players goal is to destroy the other players fleet.
+                    The 'Switch Map' Button can be used by the players to view their maps with their ship's position.
+                    The announcer pops up after every turn asking the players to switch.
+                </div>
+            </section>
+            <section id="CreditsScreen" class="ContentScreen Hide">
+                <button class="BackButton UI_Sounds">
+                    BACK
+                </button>
+                <div id="HelpContent" class = "Content">
+                    CREDITS:</br>
+                    This Web App has been developed by Harish Kumar at Vancover Film School.</br></br>
+                    The Commander Voice Over is performed by Steve Royea.</br></br>
+                    The Music was created by. It is being used for educational purpose only.
+                </div>
+            </section>
+            
+        </section>
+
+<!-- ===================================== Structure of Game Screen ============================================ -->
+        
+        <section id="GameScreen" class="Hide Layer2">
+            <header>
+                    BATTLESHIPS
+            </header>
+            <nav>
+                <!-- Sidebar Containing UI elements like Pause and Mute Buttons, Timer, Score, Missiles and Ships of the current Player  -->
+                <div class="ButtonBox">
+                    <button type="button" class="Button UI_Sounds" id="PauseButton">PAUSE</button>
+                    <button type="button" class="Button UI_Sounds" id="MuteButton">MUTE</button>
+                </div>
+                <div id="SwitchButtonContatiner" class="ButtonBox">
+                </div>
+                <!-- Ship Box Containing the Health of Each Ship -->
+                <div class="StatsBox" id="ShipBox">
+                    <div class="Title" id="ShipTitle">
+                        SHIPS
+                    </div>
+                    <div id="Ships">
+                        <div class="ShipContainer">
+                            <div id="AirCraftCarrierImage" class="ShipImage"></div>
+                            <div id="Ship1Health" class="ShipHealth">0</div>
+                        </div>
+                        <div class="ShipContainer">
+                            <div id="BattleShipImage" class="ShipImage"></div>
+                            <div id="Ship2Health" class="ShipHealth">0</div>
+                        </div>
+                        <div class="ShipContainer">
+                            <div id="CruiserImage" class="ShipImage"></div>
+                            <div id="Ship3Health" class="ShipHealth">0</div>
+                        </div>
+                        <div class="ShipContainer">
+                            <div id="DestroyerImage" class="ShipImage"></div>
+                            <div id="Ship4Health" class="ShipHealth">0</div>
+                        </div>
+                        <div class="ShipContainer">
+                            <div id="SubmarineImage" class="ShipImage"></div>
+                            <div id="Ship5Health" class="ShipHealth">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="StatsBox">
+                    <div class="Title">
+                        PLAYER
+                    </div>
+                    <div  class="Value" id="Player">
+                        <!-- This Value changes depending on the Player's turns -->
+                        1
+                    </div>
+                </div>
+                <div class="StatsBox">
+                    <div class="Title">
+                        MISSILES
+                    </div>
+                    <div class="Value" id="Missiles">
+                        <!-- Shows the number of Missiles a player has -->
+                        0000
+                    </div>
+                </div>
+                <div class="StatsBox">
+                    <div class="Title">
+                        SCORE
+                    </div>
+                    <div class="Value" id="Score">
+                        0000
+                    </div>
+                </div>
+            </nav>
+            <div id="PlayArea">
+                <div id="MapName"></div>
+                <div id="GameBoard">
+                    <!-- Generated using script during run time -->
+                </div>
+            </div>
+        </section>
+        <div id="Announcer" class="Layer3 Hide">
+            <!-- Used to announce Successful Hits and Switching between Players -->
+            <div id="AnnouncerBox">
+                <div id="CommentBox">
+
+                </div>
+                <button  id="AnnouncerContinueButton" >
+                    CONTINUE
+                </button>
+            </div>
+        </div>
+<!-- ===================================== Structure of Pause Screen ============================================ -->
+
+        <section id="PauseScreen" class="Hide Layer4">
+            <div class="ButtonContainer" id="PauseScreenButtonContainer">
+                <button id="ResumeButton" class="PauseMenuButton UI_Sounds">
+                    RESUME
+                </button>
+                <button id="QuitButton" class="PauseMenuButton UI_Sounds">
+                    QUIT
+                </button>
+            </div>
+        </section>
+        <section id="scripts">
+            <script type="text/javascript" src="scripts/fleet.js"> </script>
+            <script type="text/javascript" src="scripts/map.js"> </script>
+            <script type="text/javascript" src="scripts/player.js"> </script>
+            <script type="text/javascript" src="scripts/game.js"> </script>
+            <script type="text/javascript" src="scripts/main.js"> </script>
+        </section>
+    </body>
+</html>

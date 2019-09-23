@@ -1,0 +1,479 @@
+/** 
+ * Battleships StyleSheet
+ * 
+ * @copyright: (C) 2018 in cooperation with Vancouver Film School. All Right Reserved.
+ * @author: Harish Kumar --> {@ link harishsghp@live.com}
+ * @ version: 1.0.0
+*/
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+html
+{
+    font-family: 'VT323';
+}
+
+/* ========================================== Styles for Main Menu ===================================================== */
+
+body
+{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(136, 136, 136);
+    position: relative;
+}
+
+#MainMenu
+{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/BattleshipsBackground.png");
+    background-size: cover;
+}
+
+
+.ButtonContainer
+{
+    max-height: 60%;
+    min-height: 45%;
+    max-width: 55%;
+    min-width: 40%;
+    margin: auto;
+    flex-direction: column;
+    background-color:  rgba(197, 196, 196, 0.8);
+    padding: 10px;
+    border: solid white;
+}
+
+.MainMenuButton
+{
+    text-decoration: none;
+    background-color:  rgb(136, 136, 136);
+    color: white;
+    border: solid white;
+    text-align: center;
+    font-family: 'VT323';
+    font-size: 54px;
+    height: 70px;
+    width: 212px;
+    margin: auto;
+}
+
+.MainMenuButton:hover
+{
+    background-color: white;
+    color: rgb(136, 136, 136);
+    font-size: 56px;
+}
+
+.ContentScreen
+{
+    max-height: 60%;
+    min-height: 45%;
+    max-width: 55%;
+    min-width: 40%;
+    margin: auto;
+    flex-direction: column;
+    background-color:  rgba(197, 196, 196, 0.8);
+    padding: 10px;
+    border: solid white;
+}
+.BackButton
+{
+    text-decoration: none;
+    background-color:  rgb(136, 136, 136);
+    color: white;
+    border: solid white;
+    text-align: center;
+    font-family: 'VT323';
+    font-size: 20px;
+    height: 35px;
+    width: 105px;
+}
+.BackButton:hover
+{
+    background-color: white;
+    color: rgb(136, 136, 136);
+    font-size: 22px;
+}
+.Content
+{
+    margin: auto;
+    color: white;
+    font-size: 25px;
+    height: 70%;
+    width: 85%;
+
+}
+#PlayerNameScreen
+{
+    max-height: 100px;
+    min-height: 100px;
+}
+#PlayerNameForm
+{
+    margin:auto;
+}
+#SubmitButton
+{
+    margin: auto;
+}
+
+/* ========================================== Styles for Game Screen ===================================================== */
+#GameScreen
+{
+    height: 100vh;
+    width: 100vw;
+}
+
+nav
+{
+    /* Sidebar */
+    background-color: rgb(194, 194, 194);
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+header
+{
+    /* Header */
+    height: 110px;
+    width: 82.7%;
+    left: 250px;
+    border-bottom: solid white;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+}
+
+#PlayArea
+{
+    /* The area that contains the GameBoard */
+    position: relative;
+    top: 110px;
+    left: 250px;
+    height: 87%;
+    width: 82.7%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+
+.ButtonBox
+{
+    /* The container that contains the Pause and Mute Buttons */
+    margin: auto;
+    width: 220px;
+    height:35px;
+
+}
+
+.Button
+{
+    /* Customizing the buttons */
+    text-decoration: none;
+    background-color: rgb(136, 136, 136);
+    color: white;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    font-family: 'VT323';
+    font-size: 27px;
+    height: 35px;
+    width: 106px;
+}
+
+.Button:hover
+{
+    /* Animating Buttons while hovered over */
+    background-color: white;
+    color: rgb(136, 136, 136);
+    font-size: 30px;
+}
+
+#SwitchMap
+{
+    width: 100%;
+}
+
+
+.StatsBox
+{
+    /* Contains Stats with their Title and values */
+    margin: auto;
+    width: 220px;
+    height: 70px;
+    background-color: white;
+
+}
+
+.Title
+{
+    /* Name of the Stats */
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    font-size: 30px;
+    color: white;
+    background-color: rgb(136, 136, 136);
+}
+
+.Value
+{
+    /* Value of the Stats */
+    text-align: center;
+    margin: auto;
+    height: 50%;
+    font-size: 25px;
+    background-color: white;
+    color: rgb(136, 136, 136)
+}
+
+#ShipBox
+{
+    /* ShipBoxes are big so they require an ID */
+    height: 250px;
+}
+
+#ShipTitle
+{
+    height: 35px;
+}
+#Ships
+{
+    height: 215px;
+    width: 220px;
+}
+.ShipContainer
+{
+    height: 20%;
+    width: 220px;
+    display: flex;
+    flex-direction: row;
+}
+.ShipImage
+{
+    width: 80%;
+    height: 100%;
+}
+#AirCraftCarrierImage
+{
+    background-image: url("../images/AirCraftCarrier.png");
+    background-size: cover;
+}
+#BattleShipImage
+{
+    background-image: url("../images/Battleship.png");
+    background-size: cover;
+}
+#CruiserImage
+{
+    background-image: url("../images/Cruiser.png");
+    background-size: cover;
+}
+#DestroyerImage
+{
+    background-image: url("../images/Destroyer.png");
+    background-size: cover;
+}
+#SubmarineImage
+{
+    background-image: url("../images/Submarine.png");
+    background-size: cover;
+}
+.ShipHealth
+{
+    width: 20%;
+    height: 100%;
+    font-size: 27px;
+    color: rgb(136, 136, 136);
+    text-align: center;
+    padding-top: 10px;
+}
+.ShipDestroyed
+{
+    color: salmon;
+}
+#GameBoard
+{
+    /* Contains the table which stores position of Ships */
+    margin: auto;
+    height: 450px;
+    width: 450px;
+    border: solid white;
+}
+
+#MapName
+{
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+table
+{
+    width: 450px;
+    height: 450px;
+    background-image: url("../images/SeaTiles.png");
+    background-repeat: repeat;
+}
+
+/* Common classes that are used within cells to represent what is happening in the cell */
+.MISSED_HIT
+{
+    background-color: salmon;
+}
+.HIT_SHIP
+{
+    background-image: url("../images/Burning.gif");
+    background-size: cover;
+}
+.SHIP
+{
+    background-color: rgb(196, 104, 0);
+}
+
+.Cell
+{
+    border: solid white;
+}
+.Cell:hover
+{
+    border: solid salmon;
+}
+
+/* ========================================== Styles for Pause Screen ===================================================== */
+#Announcer
+{
+    /* The Announcer takes the Entire Screen during Announcements */
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/BattleshipsBackground.png");
+    background-size: cover;
+    flex-direction: column;
+}
+#AnnouncerBox
+{
+    max-height: 40%;
+    min-height: 30%;
+    max-width: 55%;
+    min-width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color:  rgba(197, 196, 196, 0.8);
+    padding: 10px;
+    border: solid white;
+}
+#CommentBox
+{
+    width: 100%;
+    height: 70%;
+    margin: auto;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+#AnnouncerContinueButton
+{
+    margin: auto;
+    text-decoration: none;
+    background-color: rgb(136, 136, 136);
+    border: solid white;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    font-family: 'VT323';
+    font-size: 27px;
+    height: 60px;
+    width: 90%;
+}
+#AnnouncerContinueButton:hover
+{
+    /* Animating Buttons while hovered over */
+    background-color: white;
+    color: rgb(136, 136, 136);
+}
+
+/* ========================================== Styles for Pause Screen ===================================================== */
+#PauseScreen
+{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/BattleshipsBackground.png");
+    background-size: cover;
+}
+#PauseScreenButtonContainer
+{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.PauseMenuButton
+{
+    text-decoration: none;
+    background-color:  rgb(136, 136, 136);
+    color: white;
+    border: solid white;
+    text-align: center;
+    font-family: 'VT323';
+    font-size: 54px;
+    height: 70px;
+    width: 250px;
+    margin: auto;
+}
+
+.PauseMenuButton:hover
+{
+    background-color: white;
+    color: rgb(136, 136, 136);
+    font-size: 56px;
+}
+
+/* ========================================== Common Styles =========================================================== */
+.Show
+{
+    display: block;
+}
+.Hide
+{
+    display: none;
+}
+.ShowScreen
+{
+    display: flex;
+}
+.Layer1
+{
+    z-index: 1;
+}
+.Layer2
+{
+    z-index: 2;
+}
+Layer3
+{
+    z-index: 3;
+}
+.Layer4
+{
+    z-index: 4;
+}
+.InheritLayer
+{
+    z-index: inherit;
+}
