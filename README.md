@@ -1,5 +1,5 @@
 # Battleships Web App
-*This web app is under copyright (C) by Harish Kumar and Vancouver Film School*
+*This web app is under copyright (C) by Harish Kumar at Vancouver Film School*
 
 [**Link to the app**](https://battleships-b5fd1.firebaseapp.com/)
 
